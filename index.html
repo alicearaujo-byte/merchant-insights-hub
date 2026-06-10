@@ -102,6 +102,49 @@ nav{position:fixed;top:38px;left:50%;transform:translateX(-50%);z-index:99;backg
 </style>
 </head>
 <body>
+<style>
+#password-gate{position:fixed;inset:0;background:#0a1172;z-index:9999;display:flex;align-items:center;justify-content:center;}
+#password-gate.hidden{display:none;}
+.gate-box{background:white;border-radius:18px;padding:40px;max-width:380px;width:100%;text-align:center;box-shadow:0 24px 64px rgba(0,0,0,.25);}
+.gate-logo{margin-bottom:24px;}
+.gate-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:17px;font-weight:700;color:#111827;margin-bottom:6px;}
+.gate-sub{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:#6b7280;margin-bottom:24px;}
+.gate-input{width:100%;border:1.5px solid #e5e7eb;border-radius:10px;padding:11px 14px;font-size:14px;font-family:'Plus Jakarta Sans',sans-serif;outline:none;transition:border-color .15s;text-align:center;letter-spacing:2px;}
+.gate-input:focus{border-color:#2563eb;}
+.gate-btn{margin-top:12px;width:100%;background:#2563eb;color:white;border:none;border-radius:10px;padding:12px;font-size:14px;font-weight:600;font-family:'Plus Jakarta Sans',sans-serif;cursor:pointer;transition:background .15s;}
+.gate-btn:hover{background:#0e2a8a;}
+.gate-error{font-size:12px;color:#dc2626;margin-top:8px;display:none;}
+</style>
+<div id="password-gate">
+  <div class="gate-box">
+    <div class="gate-logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#2563eb"/><path d="M10 16a6 6 0 1012 0 6 6 0 00-12 0zm6-4v4l3 2" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </div>
+    <div class="gate-title">Merchant Insights Center</div>
+    <div class="gate-sub">Uso interno · Nuvemshop</div>
+    <input class="gate-input" id="gate-input" type="password" placeholder="Senha / Contraseña" onkeydown="if(event.key==='Enter')checkPass()"/>
+    <button class="gate-btn" onclick="checkPass()">Entrar</button>
+    <div class="gate-error" id="gate-error">Senha incorreta. Tente novamente.</div>
+  </div>
+</div>
+<script>
+(function(){
+  if(sessionStorage.getItem('mic_auth')==='ok'){
+    document.getElementById('password-gate').classList.add('hidden');
+  }
+})();
+function checkPass(){
+  var v=document.getElementById('gate-input').value;
+  if(v==='insights26'){
+    sessionStorage.setItem('mic_auth','ok');
+    document.getElementById('password-gate').classList.add('hidden');
+  } else {
+    document.getElementById('gate-error').style.display='block';
+    document.getElementById('gate-input').value='';
+    document.getElementById('gate-input').focus();
+  }
+}
+</script>
 
 <div class="banner">
   <svg width="13" height="13" viewBox="0 0 16 16" fill="#1e40af"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a.75.75 0 110 1.5A.75.75 0 018 4zm0 3a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 018 7z"/></svg>
