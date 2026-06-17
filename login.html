@@ -20,10 +20,6 @@
       max-width: 400px;
       padding: 48px 32px;
     }
-    .logo {
-      width: 140px;
-      margin-bottom: 40px;
-    }
     h1 {
       font-size: 22px;
       font-weight: 600;
@@ -53,11 +49,18 @@
       transition: opacity 0.2s;
     }
     .btn-google:hover { opacity: 0.9; }
+    .btn-google:disabled { opacity: 0.6; cursor: not-allowed; }
     .btn-google svg { width: 20px; height: 20px; }
     .error {
       margin-top: 20px;
       font-size: 13px;
       color: #ff6b6b;
+      display: none;
+    }
+    .loading {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #888;
       display: none;
     }
     .footer {
@@ -69,11 +72,10 @@
 </head>
 <body>
   <div class="container">
-    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Nuvemshop_logo.svg/2560px-Nuvemshop_logo.svg.png" alt="Nuvemshop" onerror="this.style.display='none'" />
     <h1>Merchant Insights Center</h1>
     <p>Acesso restrito a colaboradores Nuvemshop.<br/>Entre com sua conta corporativa Google.</p>
 
-    <button class="btn-google" onclick="signInWithGoogle()">
+    <button class="btn-google" id="btn-login" onclick="signInWithGoogle()">
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
         <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -83,15 +85,14 @@
       Entrar com Google
     </button>
 
+    <div class="loading" id="loading">Redirecionando...</div>
     <div class="error" id="error-msg"></div>
-
     <div class="footer">Uso interno · informações confidenciais</div>
   </div>
 
-  <!-- Firebase SDK -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+    import { getAuth, signInWithRedirect, getRedirectResult, GoogleAuthProvider, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyABxET6MEaAO2Kobp1_RfDSs03RCoeuk3E",
@@ -102,14 +103,30 @@
       appId: "1:922386492366:web:dc28d6fa14e00be603999f"
     };
 
+    const ALLOWED_DOMAINS = ["tiendanube.com", "nuvemshop.com.br"];
+
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
-    const ALLOWED_DOMAINS = ["tiendanube.com", "nuvemshop.com.br"];
+    // Verifica resultado do redirect
+    getRedirectResult(auth).then((result) => {
+      if (result && result.user) {
+        const domain = result.user.email.split("@")[1];
+        if (!ALLOWED_DOMAINS.includes(domain)) {
+          auth.signOut();
+          showError("Acesso restrito a colaboradores Nuvemshop.");
+          return;
+        }
+        window.location.href = "/index.html";
+      }
+    }).catch((err) => {
+      console.error(err);
+      showError("Erro ao autenticar. Tente novamente.");
+    });
 
-    // Se já está logado com domínio correto, redireciona direto
+    // Se já está logado, redireciona
     onAuthStateChanged(auth, (user) => {
-      if (user && user.email) {
+      if (user) {
         const domain = user.email.split("@")[1];
         if (ALLOWED_DOMAINS.includes(domain)) {
           window.location.href = "/index.html";
@@ -117,32 +134,22 @@
       }
     });
 
-    window.signInWithGoogle = async function() {
+    window.signInWithGoogle = function() {
+      const btn = document.getElementById("btn-login");
+      const loading = document.getElementById("loading");
+      btn.disabled = true;
+      loading.style.display = "block";
       const provider = new GoogleAuthProvider();
       provider.setCustomParameters({ hd: "tiendanube.com" });
-
-      try {
-        const result = await signInWithPopup(auth, provider);
-        const email = result.user.email || "";
-        const domain = email.split("@")[1];
-
-        if (!ALLOWED_DOMAINS.includes(domain)) {
-          await auth.signOut();
-          showError("Acesso restrito a colaboradores Nuvemshop (@tiendanube.com ou @nuvemshop.com.br).");
-          return;
-        }
-
-        window.location.href = "/index.html";
-      } catch (err) {
-        showError("Erro ao autenticar. Tente novamente.");
-        console.error(err);
-      }
+      signInWithRedirect(auth, provider);
     };
 
     function showError(msg) {
       const el = document.getElementById("error-msg");
       el.textContent = msg;
       el.style.display = "block";
+      document.getElementById("btn-login").disabled = false;
+      document.getElementById("loading").style.display = "none";
     }
   </script>
 </body>
