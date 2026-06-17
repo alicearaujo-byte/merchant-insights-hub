@@ -3,7 +3,7 @@ import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/
 
 const firebaseConfig = {
   apiKey: "AIzaSyABxET6MEaAO2Kobp1_RfDSs03RCoeuk3E",
-  authDomain: "support-468213.firebaseapp.com",
+  authDomain: "merchant-insights-hub-five.vercel.app",
   projectId: "support-468213",
   storageBucket: "support-468213.firebasestorage.app",
   messagingSenderId: "922386492366",
