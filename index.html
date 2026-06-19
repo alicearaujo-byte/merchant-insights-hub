@@ -525,6 +525,7 @@ function setLang(lang,btn){
   document.querySelectorAll('.t-open3').forEach(el=>el.textContent=isPT?'Relatório':'Reporte');
   document.querySelectorAll('[data-pt][data-es]').forEach(el=>{el.textContent=isPT?el.dataset.pt:el.dataset.es;});
   document.querySelectorAll('.t-bilingual').forEach(el=>{el.textContent=isPT?el.dataset.pt:el.dataset.es;});
+  const logo=document.getElementById('nav-logo-img');if(logo){logo.src=isPT?logo.dataset.ns:logo.dataset.tn;logo.alt=isPT?'Nuvemshop':'Tiendanube';}
   const fb=document.querySelector('.feedback-btn');
   if(fb){const svg=fb.querySelector('svg');fb.innerHTML='';if(svg)fb.appendChild(svg);fb.appendChild(document.createTextNode(isPT?' Sua opinião importa':' Tu opinión importa'));}
   const mt=document.querySelector('.modal-title');if(mt)mt.textContent=isPT?'Sua opinião importa':'Tu opinión importa';
