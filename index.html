@@ -18,12 +18,11 @@
   --coral:#cc785c;--coral-bg:#fff7f4;--coral-border:#fcd9cc;
   --gray-bg:#f3f4f8;--gray-border:#e5e7eb;--gray-text:#6b7280;--gray-dark:#111827;
   --font:'Plus Jakarta Sans',sans-serif;
-  --font-display:'Ivy Presto',Georgia,serif;
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--font);background:var(--gray-bg);color:var(--gray-dark)}
 .banner{background:#eff6ff;border-bottom:1px solid #bfdbfe;padding:9px 24px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;color:#1e40af;font-weight:500;position:sticky;top:0;z-index:100}
-nav{position:fixed;top:38px;left:50%;transform:translateX(-50%);z-index:99;background:#ffffff;border-radius:999px;padding:8px 20px;display:flex;align-items:center;gap:24px;box-shadow:0 2px 20px rgba(0,0,0,0.1);width:min(700px,calc(100vw - 32px))}
+nav{position:fixed;top:38px;left:50%;transform:translateX(-50%);z-index:99;background:#fff;border-radius:999px;padding:8px 20px;display:flex;align-items:center;gap:24px;box-shadow:0 2px 20px rgba(0,0,0,.1);width:min(700px,calc(100vw - 32px))}
 .nav-logo{display:flex;align-items:center}
 .nav-tag{font-size:11px;font-weight:600;border:1px solid var(--gray-border);border-radius:999px;padding:2px 10px;color:var(--gray-text)}
 .nav-links{display:flex;align-items:center;gap:4px;margin-left:auto}
@@ -36,8 +35,8 @@ nav{position:fixed;top:38px;left:50%;transform:translateX(-50%);z-index:99;backg
 .hero-pill-dot{width:6px;height:6px;border-radius:50%;background:#60a5fa;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 .hero h1{font-family:var(--font);font-weight:700;font-size:clamp(38px,5.5vw,64px);color:white;line-height:1.1;margin-bottom:18px;max-width:700px}
-.hero h1 span{color:#93c5fd;font-weight:700}
-.hero-sub{font-size:15px;color:rgba(255,255,255,.55);max-width:460px;line-height:1.75;font-weight:400}
+.hero h1 span{color:#93c5fd}
+.hero-sub{font-size:15px;color:rgba(255,255,255,.55);max-width:460px;line-height:1.75}
 .hero-scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.25);font-size:10px;letter-spacing:.1em;text-transform:uppercase}
 .hero-scroll-line{width:1px;height:28px;background:linear-gradient(to bottom,rgba(255,255,255,.35),transparent)}
 .main{max-width:1080px;margin:0 auto;padding:56px 24px 80px}
@@ -54,35 +53,52 @@ nav{position:fixed;top:38px;left:50%;transform:translateX(-50%);z-index:99;backg
 .cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
 .card{background:white;border:1px solid var(--gray-border);border-radius:14px;padding:18px 20px 20px;display:flex;flex-direction:column;transition:box-shadow .18s,transform .18s,border-color .15s}
 .card:hover{box-shadow:0 6px 20px rgba(0,0,0,.07);transform:translateY(-2px)}
+/* card themes */
 .card-claude{background:var(--coral-bg);border-color:var(--coral-border)}
 .card-claude:hover{border-color:#f9b5a0}
 .card-drive{background:#fffdf0;border-color:#fde68a}
 .card-drive:hover{border-color:#fbbf24}
+.card-nps{background:#f0fdf4;border-color:#bbf7d0}
+.card-nps:hover{border-color:#86efac}
+.card-research{background:#faf5ff;border-color:#ddd6fe}
+.card-research:hover{border-color:#c4b5fd}
+.card-llm{background:#eff6ff;border-color:#bfdbfe}
+.card-llm:hover{border-color:#93c5fd}
+/* icons */
 .card-icon-wrap{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:8px}
 .icon-claude{background:rgba(204,120,92,.12);color:var(--coral)}
 .icon-drive{background:rgba(251,191,36,.15);color:#d97706}
-.icon-nps{background:rgba(34,197,94,.1);color:#16a34a}
-.icon-research{background:rgba(139,92,246,.1);color:#7c3aed}
-.icon-teal{background:rgba(13,148,136,.12);color:#0d9488}
-.agent-tag{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9a3a1e;display:flex;align-items:center;gap:5px;margin-bottom:4px}
+.icon-nps{background:rgba(34,197,94,.12);color:#16a34a}
+.icon-research{background:rgba(139,92,246,.12);color:#7c3aed}
+.icon-llm{background:rgba(37,99,235,.12);color:#2563eb}
+/* tags */
+.card-tag{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:5px;margin-bottom:4px}
+.tag-claude{color:#9a3a1e}
+.tag-drive{color:#92400e}
+.tag-nps{color:#166534}
+.tag-research{color:#6d28d9}
+.tag-llm{color:#1d4ed8}
 .card-title{font-size:15px;font-weight:600;color:var(--gray-dark);line-height:1.3;margin-bottom:4px}
 .card-desc{font-size:12.5px;color:var(--gray-text);line-height:1.6;flex:1}
 .card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:12px;gap:8px;border-top:1px solid var(--gray-border)}
 .card-claude .card-footer{border-top-color:var(--coral-border)}
+.card-nps .card-footer{border-top-color:#bbf7d0}
+.card-research .card-footer{border-top-color:#ddd6fe}
+.card-llm .card-footer{border-top-color:#bfdbfe}
+/* buttons */
 .btn-open{display:inline-flex;align-items:center;gap:5px;background:var(--blue);color:white;font-size:12.5px;font-weight:600;font-family:var(--font);padding:7px 14px;border-radius:8px;border:none;cursor:pointer;text-decoration:none;transition:background .15s;white-space:nowrap}
 .btn-open:hover{background:var(--blue-dark)}
-.btn-open-coral{background:var(--coral)}
-.btn-open-coral:hover{background:#b5624a}
-.btn-open-amber{background:#d97706}
-.btn-open-amber:hover{background:#b45309}
-.btn-open-purple{background:#7c3aed}
-.btn-open-purple:hover{background:#6d28d9}
-.btn-open-teal{background:#0d9488}
-.btn-open-teal:hover{background:#0f766e}
+.btn-coral{background:var(--coral)}.btn-coral:hover{background:#b5624a}
+.btn-amber{background:#d97706}.btn-amber:hover{background:#b45309}
+.btn-green{background:#16a34a}.btn-green:hover{background:#15803d}
+.btn-purple{background:#7c3aed}.btn-purple:hover{background:#6d28d9}
+.btn-blue{background:#2563eb}.btn-blue:hover{background:#1d4ed8}
 .btn-copy{font-size:12px;color:var(--gray-text);background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:4px;font-family:var(--font);padding:0;transition:color .15s;white-space:nowrap}
 .btn-copy:hover{color:var(--blue)}
+/* feedback */
 .feedback-btn{position:fixed;bottom:28px;right:28px;background:var(--blue);color:white;border:none;border-radius:999px;padding:12px 20px;font-size:13px;font-weight:600;font-family:var(--font);cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:0 4px 16px rgba(37,99,235,.35);transition:all .2s;z-index:200}
 .feedback-btn:hover{background:var(--blue-dark);transform:translateY(-2px)}
+/* modals */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);backdrop-filter:blur(4px);z-index:300;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .2s}
 .modal-overlay.open{opacity:1;pointer-events:all}
 .modal{background:white;border-radius:18px;padding:30px;max-width:440px;width:100%;box-shadow:0 24px 64px rgba(0,0,0,.15);transform:translateY(14px);transition:transform .2s}
@@ -95,26 +111,25 @@ nav{position:fixed;top:38px;left:50%;transform:translateX(-50%);z-index:99;backg
 .modal-field select:focus,.modal-field textarea:focus,.modal-field input:focus{border-color:var(--blue)}
 .modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:18px}
 .btn-cancel{padding:8px 16px;border:1px solid var(--gray-border);border-radius:8px;background:white;font-size:13px;font-family:var(--font);cursor:pointer;font-weight:500}
-.btn-submit{padding:8px 18px;background:var(--blue);color:white;border:none;border-radius:8px;font-size:13px;font-family:var(--font);font-weight:600;cursor:pointer;transition:background .15s}
+.btn-submit{padding:8px 18px;background:var(--blue);color:white;border:none;border-radius:8px;font-size:13px;font-family:var(--font);font-weight:600;cursor:pointer}
 .btn-submit:hover{background:var(--blue-dark)}
 .modal-success{text-align:center;padding:16px 0;display:none}
 .modal-success p{font-size:15px;font-weight:600;margin:10px 0 4px}
 .modal-success span{font-size:13px;color:var(--gray-text)}
-/* Access modal */
-.access-modal{background:white;border-radius:18px;padding:28px;max-width:400px;width:100%;box-shadow:0 24px 64px rgba(0,0,0,.15);transform:translateY(14px);transition:transform .2s}
+/* access modal */
+.access-modal{background:white;border-radius:18px;padding:28px;max-width:420px;width:100%;box-shadow:0 24px 64px rgba(0,0,0,.15);transform:translateY(14px);transition:transform .2s}
 .modal-overlay.open .access-modal{transform:translateY(0)}
-.access-modal-icon{width:44px;height:44px;border-radius:12px;background:#f0fdf4;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
-.access-modal-title{font-size:16px;font-weight:700;margin-bottom:6px}
-.access-modal-desc{font-size:13px;color:var(--gray-text);line-height:1.6;margin-bottom:18px}
-.access-contact-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
-.btn-contact{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:8px;font-size:12.5px;font-weight:600;font-family:var(--font);cursor:pointer;text-decoration:none;transition:all .15s;border:none}
-.btn-contact-email{background:#eff6ff;color:#2563eb}
-.btn-contact-email:hover{background:#dbeafe}
-.btn-contact-slack{background:#f5f3ff;color:#7c3aed}
-.btn-contact-slack:hover{background:#ede9fe}
-.btn-contact-open{background:var(--blue);color:white}
-.btn-contact-open:hover{background:var(--blue-dark)}
-.access-modal-footer{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--gray-border);margin-top:4px}
+.access-icon{width:44px;height:44px;border-radius:12px;background:#eff6ff;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.access-title{font-size:16px;font-weight:700;margin-bottom:6px;color:var(--gray-dark)}
+.access-desc{font-size:13px;color:var(--gray-text);line-height:1.65;margin-bottom:20px}
+.access-cta{display:block;width:100%;text-align:center;padding:11px;border-radius:10px;background:var(--blue);color:white;font-size:13.5px;font-weight:600;font-family:var(--font);text-decoration:none;margin-bottom:12px;transition:background .15s;border:none;cursor:pointer}
+.access-cta:hover{background:var(--blue-dark)}
+.access-note{font-size:12px;color:var(--gray-text);text-align:center;line-height:1.6}
+.access-note a{color:var(--blue);text-decoration:none;font-weight:500}
+.access-note a:hover{text-decoration:underline}
+.access-footer{display:flex;justify-content:center;margin-top:14px;padding-top:12px;border-top:1px solid var(--gray-border)}
+.btn-close-access{background:none;border:none;font-size:12.5px;color:var(--gray-text);cursor:pointer;font-family:var(--font);padding:4px 8px}
+.btn-close-access:hover{color:var(--gray-dark)}
 @media(max-width:600px){.nav-links{display:none}.cards-grid{grid-template-columns:1fr}}
 </style>
 </head>
@@ -150,11 +165,9 @@ function checkPass(){var v=document.getElementById('gate-input').value;if(v==='i
 </div>
 
 <nav>
-  <div class="nav-logo"><img id="nav-logo-img"
-  data-ns="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Nuvemshop_logo.svg/320px-Nuvemshop_logo.svg.png"
-  data-tn="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Nuvemshop_logo.svg/320px-Nuvemshop_logo.svg.png"
-  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Nuvemshop_logo.svg/320px-Nuvemshop_logo.svg.png"
-  alt="Nuvemshop" style="height:22px;width:auto;display:block;"/></div>
+  <div class="nav-logo">
+    <img id="nav-logo-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='20'%3E%3Ctext y='16' font-family='sans-serif' font-size='14' font-weight='bold' fill='%232563eb'%3ENuvemshop%3C/text%3E%3C/svg%3E" alt="Nuvemshop" style="height:20px;width:auto;display:block;"/>
+  </div>
   <span class="nav-tag">Merchant Insights Center</span>
   <span style="font-size:11px;color:#9ca3af;margin-left:4px;"><span id="nav-updated">Atualizado 19/06/2026</span></span>
   <div class="nav-links">
@@ -187,7 +200,7 @@ function checkPass(){var v=document.getElementById('gate-input').value;if(v==='i
     <div class="filter-row">
       <span class="filter-label" id="fl-mkt">Mercado</span>
       <button class="filter-pill active" data-filter="mercado" data-value="all" onclick="applyFilter('mercado','all',this)"><span class="t-todos">Todos</span></button>
-      <button class="filter-pill" data-filter="mercado" data-value="latam" onclick="applyFilter('mercado','latam',this)"><span class="t-latam">LATAM</span></button>
+      <button class="filter-pill" data-filter="mercado" data-value="latam" onclick="applyFilter('mercado','latam',this)"><span class="t-latam">🌍 LATAM</span></button>
       <button class="filter-pill" data-filter="mercado" data-value="br" onclick="applyFilter('mercado','br',this)"><span class="t-br">🇧🇷 Brasil</span></button>
       <button class="filter-pill" data-filter="mercado" data-value="ar" onclick="applyFilter('mercado','ar',this)"><span class="t-ar">🇦🇷 Argentina</span></button>
       <button class="filter-pill" data-filter="mercado" data-value="mx" onclick="applyFilter('mercado','mx',this)"><span class="t-mx">🇲🇽 México</span></button>
@@ -198,178 +211,203 @@ function checkPass(){var v=document.getElementById('gate-input').value;if(v==='i
 
   <div class="cards-grid" id="cards-grid">
 
-    <!-- ── BRAND TRACKING ── -->
+    <!-- ══ BRAND TRACKING ══ -->
+
     <div class="card card-claude" data-tipo="tracker" data-mercado="latam">
-      <div class="card-icon-wrap icon-claude"><svg width="20" height="20" viewBox="0 0 100 100" fill="currentColor"><path d="M 46,36 L 47,4 L 53,4 L 54,36 Z M 53.5,35.9 L 70.4,8.7 L 75.6,11.7 L 60.5,39.9 Z M 60.1,39.5 L 88.3,24.4 L 91.3,29.6 L 64.1,46.5 Z M 64,46 L 96,47 L 96,53 L 64,54 Z M 64.1,53.5 L 91.3,70.4 L 88.3,75.6 L 60.5,60.1 Z M 60.1,60.5 L 75.6,88.3 L 70.4,91.3 L 53.5,64.1 Z M 54,64 L 53,96 L 47,96 L 46,64 Z M 46.5,64.1 L 29.6,91.3 L 24.4,88.3 L 39.9,60.5 Z M 39.5,60.1 L 11.7,75.6 L 8.7,70.4 L 35.9,53.5 Z M 36,54 L 4,53 L 4,47 L 36,46 Z M 35.9,46.5 L 8.7,29.6 L 11.7,24.4 L 39.5,39.9 Z M 39.9,39.5 L 24.4,11.7 L 29.6,8.7 L 46.5,35.9 Z M 38,50 a 12,12 0 1,0 24,0 a 12,12 0 1,0 -24,0" fill-rule="evenodd"/></svg></div>
-      <div class="agent-tag"><svg width="9" height="9" viewBox="0 0 100 100" fill="currentColor"><path d="M 46,36 L 47,4 L 53,4 L 54,36 Z M 53.5,35.9 L 70.4,8.7 L 75.6,11.7 L 60.5,39.9 Z M 60.1,39.5 L 88.3,24.4 L 91.3,29.6 L 64.1,46.5 Z M 64,46 L 96,47 L 96,53 L 64,54 Z M 64.1,53.5 L 91.3,70.4 L 88.3,75.6 L 60.5,60.1 Z M 60.1,60.5 L 75.6,88.3 L 70.4,91.3 L 53.5,64.1 Z M 54,64 L 53,96 L 47,96 L 46,64 Z M 46.5,64.1 L 29.6,91.3 L 24.4,88.3 L 39.9,60.5 Z M 39.5,60.1 L 11.7,75.6 L 8.7,70.4 L 35.9,53.5 Z M 36,54 L 4,53 L 4,47 L 36,46 Z M 35.9,46.5 L 8.7,29.6 L 11.7,24.4 L 39.5,39.9 Z M 39.9,39.5 L 24.4,11.7 L 29.6,8.7 L 46.5,35.9 Z M 38,50 a 12,12 0 1,0 24,0 a 12,12 0 1,0 -24,0" fill-rule="evenodd"/></svg><span class="t-bilingual" data-pt="Agente Claude · LATAM" data-es="Agente Claude · LATAM">Agente Claude · LATAM</span></div>
+      <div class="card-icon-wrap icon-claude"><svg width="20" height="20" viewBox="0 0 100 100" fill="currentColor"><path d="M46,36L47,4L53,4L54,36ZM53.5,35.9L70.4,8.7L75.6,11.7L60.5,39.9ZM60.1,39.5L88.3,24.4L91.3,29.6L64.1,46.5ZM64,46L96,47L96,53L64,54ZM64.1,53.5L91.3,70.4L88.3,75.6L60.5,60.1ZM60.1,60.5L75.6,88.3L70.4,91.3L53.5,64.1ZM54,64L53,96L47,96L46,64ZM46.5,64.1L29.6,91.3L24.4,88.3L39.9,60.5ZM39.5,60.1L11.7,75.6L8.7,70.4L35.9,53.5ZM36,54L4,53L4,47L36,46ZM35.9,46.5L8.7,29.6L11.7,24.4L39.5,39.9ZM39.9,39.5L24.4,11.7L29.6,8.7L46.5,35.9ZM38,50a12,12 0 1,0 24,0a12,12 0 1,0 -24,0" fill-rule="evenodd"/></svg></div>
+      <div class="card-tag tag-claude"><svg width="9" height="9" viewBox="0 0 100 100" fill="currentColor"><path d="M46,36L47,4L53,4L54,36ZM53.5,35.9L70.4,8.7L75.6,11.7L60.5,39.9ZM60.1,39.5L88.3,24.4L91.3,29.6L64.1,46.5ZM64,46L96,47L96,53L64,54ZM64.1,53.5L91.3,70.4L88.3,75.6L60.5,60.1ZM60.1,60.5L75.6,88.3L70.4,91.3L53.5,64.1ZM54,64L53,96L47,96L46,64ZM46.5,64.1L29.6,91.3L24.4,88.3L39.9,60.5ZM39.5,60.1L11.7,75.6L8.7,70.4L35.9,53.5ZM36,54L4,53L4,47L36,46ZM35.9,46.5L8.7,29.6L11.7,24.4L39.5,39.9ZM39.9,39.5L24.4,11.7L29.6,8.7L46.5,35.9ZM38,50a12,12 0 1,0 24,0a12,12 0 1,0 -24,0" fill-rule="evenodd"/></svg><span class="t-bilingual" data-pt="Agente Claude · Merchant Insights Center · 🌍 LATAM" data-es="Agente Claude · Merchant Insights Center · 🌍 LATAM">Agente Claude · Merchant Insights Center · 🌍 LATAM</span></div>
       <div class="card-title" data-pt="Merchant Insights Center LATAM" data-es="Merchant Insights Center LATAM">Merchant Insights Center LATAM</div>
       <div class="card-desc"><span class="t-bilingual" data-pt="Projeto que reúne todas as fontes em um só lugar — brand tracking, NPS, pesquisas de produto e muito mais." data-es="Proyecto que reúne todas las fuentes en un mismo lugar — brand tracking, NPS, investigaciones de producto y mucho más.">Projeto que reúne todas as fontes em um só lugar — brand tracking, NPS, pesquisas de produto e muito mais.</span></div>
       <div class="card-footer">
-        <a class="btn-open btn-open-coral" href="https://claude.ai/project/019e987f-0b83-7591-afe3-d5e421049845" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</a>
+        <a class="btn-open btn-coral" href="https://claude.ai/project/019e987f-0b83-7591-afe3-d5e421049845" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</a>
         <button class="btn-copy" onclick="copyLink(this,'https://claude.ai/project/019e987f-0b83-7591-afe3-d5e421049845')"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg><span class="t-copy">Copiar link</span></button>
       </div>
     </div>
 
     <div class="card card-claude" data-tipo="tracker" data-mercado="br">
-      <div class="card-icon-wrap icon-claude"><svg width="20" height="20" viewBox="0 0 100 100" fill="currentColor"><path d="M 46,36 L 47,4 L 53,4 L 54,36 Z M 53.5,35.9 L 70.4,8.7 L 75.6,11.7 L 60.5,39.9 Z M 60.1,39.5 L 88.3,24.4 L 91.3,29.6 L 64.1,46.5 Z M 64,46 L 96,47 L 96,53 L 64,54 Z M 64.1,53.5 L 91.3,70.4 L 88.3,75.6 L 60.5,60.1 Z M 60.1,60.5 L 75.6,88.3 L 70.4,91.3 L 53.5,64.1 Z M 54,64 L 53,96 L 47,96 L 46,64 Z M 46.5,64.1 L 29.6,91.3 L 24.4,88.3 L 39.9,60.5 Z M 39.5,60.1 L 11.7,75.6 L 8.7,70.4 L 35.9,53.5 Z M 36,54 L 4,53 L 4,47 L 36,46 Z M 35.9,46.5 L 8.7,29.6 L 11.7,24.4 L 39.5,39.9 Z M 39.9,39.5 L 24.4,11.7 L 29.6,8.7 L 46.5,35.9 Z M 38,50 a 12,12 0 1,0 24,0 a 12,12 0 1,0 -24,0" fill-rule="evenodd"/></svg></div>
-      <div class="agent-tag"><svg width="9" height="9" viewBox="0 0 100 100" fill="currentColor"><path d="M 46,36 L 47,4 L 53,4 L 54,36 Z M 53.5,35.9 L 70.4,8.7 L 75.6,11.7 L 60.5,39.9 Z M 60.1,39.5 L 88.3,24.4 L 91.3,29.6 L 64.1,46.5 Z M 64,46 L 96,47 L 96,53 L 64,54 Z M 64.1,53.5 L 91.3,70.4 L 88.3,75.6 L 60.5,60.1 Z M 60.1,60.5 L 75.6,88.3 L 70.4,91.3 L 53.5,64.1 Z M 54,64 L 53,96 L 47,96 L 46,64 Z M 46.5,64.1 L 29.6,91.3 L 24.4,88.3 L 39.9,60.5 Z M 39.5,60.1 L 11.7,75.6 L 8.7,70.4 L 35.9,53.5 Z M 36,54 L 4,53 L 4,47 L 36,46 Z M 35.9,46.5 L 8.7,29.6 L 11.7,24.4 L 39.5,39.9 Z M 39.9,39.5 L 24.4,11.7 L 29.6,8.7 L 46.5,35.9 Z M 38,50 a 12,12 0 1,0 24,0 a 12,12 0 1,0 -24,0" fill-rule="evenodd"/></svg><span class="t-bilingual" data-pt="Agente Claude · 🇧🇷 Brasil" data-es="Agente Claude · 🇧🇷 Brasil">Agente Claude · 🇧🇷 Brasil</span></div>
+      <div class="card-icon-wrap icon-claude"><svg width="20" height="20" viewBox="0 0 100 100" fill="currentColor"><path d="M46,36L47,4L53,4L54,36ZM53.5,35.9L70.4,8.7L75.6,11.7L60.5,39.9ZM60.1,39.5L88.3,24.4L91.3,29.6L64.1,46.5ZM64,46L96,47L96,53L64,54ZM64.1,53.5L91.3,70.4L88.3,75.6L60.5,60.1ZM60.1,60.5L75.6,88.3L70.4,91.3L53.5,64.1ZM54,64L53,96L47,96L46,64ZM46.5,64.1L29.6,91.3L24.4,88.3L39.9,60.5ZM39.5,60.1L11.7,75.6L8.7,70.4L35.9,53.5ZM36,54L4,53L4,47L36,46ZM35.9,46.5L8.7,29.6L11.7,24.4L39.5,39.9ZM39.9,39.5L24.4,11.7L29.6,8.7L46.5,35.9ZM38,50a12,12 0 1,0 24,0a12,12 0 1,0 -24,0" fill-rule="evenodd"/></svg></div>
+      <div class="card-tag tag-claude"><svg width="9" height="9" viewBox="0 0 100 100" fill="currentColor"><path d="M46,36L47,4L53,4L54,36ZM53.5,35.9L70.4,8.7L75.6,11.7L60.5,39.9ZM60.1,39.5L88.3,24.4L91.3,29.6L64.1,46.5ZM64,46L96,47L96,53L64,54ZM64.1,53.5L91.3,70.4L88.3,75.6L60.5,60.1ZM60.1,60.5L75.6,88.3L70.4,91.3L53.5,64.1ZM54,64L53,96L47,96L46,64ZM46.5,64.1L29.6,91.3L24.4,88.3L39.9,60.5ZM39.5,60.1L11.7,75.6L8.7,70.4L35.9,53.5ZM36,54L4,53L4,47L36,46ZM35.9,46.5L8.7,29.6L11.7,24.4L39.5,39.9ZM39.9,39.5L24.4,11.7L29.6,8.7L46.5,35.9ZM38,50a12,12 0 1,0 24,0a12,12 0 1,0 -24,0" fill-rule="evenodd"/></svg><span class="t-bilingual" data-pt="Agente Claude · Merchant Insights Center · 🇧🇷 Brasil" data-es="Agente Claude · Merchant Insights Center · 🇧🇷 Brasil">Agente Claude · Merchant Insights Center · 🇧🇷 Brasil</span></div>
       <div class="card-title" data-pt="Brand Tracking Brasil" data-es="Brand Tracking Brasil">Brand Tracking Brasil</div>
       <div class="card-desc"><span class="t-bilingual" data-pt="Compilado com análise cruzada das ondas do brand tracker Brasil. Série histórica de 2022 a 2026." data-es="Compilado con análisis cruzado de las ondas del brand tracker Brasil. Serie histórica de 2022 a 2026.">Compilado com análise cruzada das ondas do brand tracker Brasil. Série histórica de 2022 a 2026.</span></div>
       <div class="card-footer">
-        <a class="btn-open btn-open-coral" href="https://claude.ai/project/019e4229-21f0-73da-9a99-5f6744de7dbb" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</a>
+        <a class="btn-open btn-coral" href="https://claude.ai/project/019e4229-21f0-73da-9a99-5f6744de7dbb" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</a>
         <button class="btn-copy" onclick="copyLink(this,'https://claude.ai/project/019e4229-21f0-73da-9a99-5f6744de7dbb')"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg><span class="t-copy">Copiar link</span></button>
       </div>
     </div>
 
     <div class="card card-claude" data-tipo="tracker" data-mercado="ar">
-      <div class="card-icon-wrap icon-claude"><svg width="20" height="20" viewBox="0 0 100 100" fill="currentColor"><path d="M 46,36 L 47,4 L 53,4 L 54,36 Z M 53.5,35.9 L 70.4,8.7 L 75.6,11.7 L 60.5,39.9 Z M 60.1,39.5 L 88.3,24.4 L 91.3,29.6 L 64.1,46.5 Z M 64,46 L 96,47 L 96,53 L 64,54 Z M 64.1,53.5 L 91.3,70.4 L 88.3,75.6 L 60.5,60.1 Z M 60.1,60.5 L 75.6,88.3 L 70.4,91.3 L 53.5,64.1 Z M 54,64 L 53,96 L 47,96 L 46,64 Z M 46.5,64.1 L 29.6,91.3 L 24.4,88.3 L 39.9,60.5 Z M 39.5,60.1 L 11.7,75.6 L 8.7,70.4 L 35.9,53.5 Z M 36,54 L 4,53 L 4,47 L 36,46 Z M 35.9,46.5 L 8.7,29.6 L 11.7,24.4 L 39.5,39.9 Z M 39.9,39.5 L 24.4,11.7 L 29.6,8.7 L 46.5,35.9 Z M 38,50 a 12,12 0 1,0 24,0 a 12,12 0 1,0 -24,0" fill-rule="evenodd"/></svg></div>
-      <div class="agent-tag"><svg width="9" height="9" viewBox="0 0 100 100" fill="currentColor"><path d="M 46,36 L 47,4 L 53,4 L 54,36 Z M 53.5,35.9 L 70.4,8.7 L 75.6,11.7 L 60.5,39.9 Z M 60.1,39.5 L 88.3,24.4 L 91.3,29.6 L 64.1,46.5 Z M 64,46 L 96,47 L 96,53 L 64,54 Z M 64.1,53.5 L 91.3,70.4 L 88.3,75.6 L 60.5,60.1 Z M 60.1,60.5 L 75.6,88.3 L 70.4,91.3 L 53.5,64.1 Z M 54,64 L 53,96 L 47,96 L 46,64 Z M 46.5,64.1 L 29.6,91.3 L 24.4,88.3 L 39.9,60.5 Z M 39.5,60.1 L 11.7,75.6 L 8.7,70.4 L 35.9,53.5 Z M 36,54 L 4,53 L 4,47 L 36,46 Z M 35.9,46.5 L 8.7,29.6 L 11.7,24.4 L 39.5,39.9 Z M 39.9,39.5 L 24.4,11.7 L 29.6,8.7 L 46.5,35.9 Z M 38,50 a 12,12 0 1,0 24,0 a 12,12 0 1,0 -24,0" fill-rule="evenodd"/></svg><span class="t-bilingual" data-pt="Agente Claude · 🇦🇷 Argentina" data-es="Agente Claude · 🇦🇷 Argentina">Agente Claude · 🇦🇷 Argentina</span></div>
+      <div class="card-icon-wrap icon-claude"><svg width="20" height="20" viewBox="0 0 100 100" fill="currentColor"><path d="M46,36L47,4L53,4L54,36ZM53.5,35.9L70.4,8.7L75.6,11.7L60.5,39.9ZM60.1,39.5L88.3,24.4L91.3,29.6L64.1,46.5ZM64,46L96,47L96,53L64,54ZM64.1,53.5L91.3,70.4L88.3,75.6L60.5,60.1ZM60.1,60.5L75.6,88.3L70.4,91.3L53.5,64.1ZM54,64L53,96L47,96L46,64ZM46.5,64.1L29.6,91.3L24.4,88.3L39.9,60.5ZM39.5,60.1L11.7,75.6L8.7,70.4L35.9,53.5ZM36,54L4,53L4,47L36,46ZM35.9,46.5L8.7,29.6L11.7,24.4L39.5,39.9ZM39.9,39.5L24.4,11.7L29.6,8.7L46.5,35.9ZM38,50a12,12 0 1,0 24,0a12,12 0 1,0 -24,0" fill-rule="evenodd"/></svg></div>
+      <div class="card-tag tag-claude"><svg width="9" height="9" viewBox="0 0 100 100" fill="currentColor"><path d="M46,36L47,4L53,4L54,36ZM53.5,35.9L70.4,8.7L75.6,11.7L60.5,39.9ZM60.1,39.5L88.3,24.4L91.3,29.6L64.1,46.5ZM64,46L96,47L96,53L64,54ZM64.1,53.5L91.3,70.4L88.3,75.6L60.5,60.1ZM60.1,60.5L75.6,88.3L70.4,91.3L53.5,64.1ZM54,64L53,96L47,96L46,64ZM46.5,64.1L29.6,91.3L24.4,88.3L39.9,60.5ZM39.5,60.1L11.7,75.6L8.7,70.4L35.9,53.5ZM36,54L4,53L4,47L36,46ZM35.9,46.5L8.7,29.6L11.7,24.4L39.5,39.9ZM39.9,39.5L24.4,11.7L29.6,8.7L46.5,35.9ZM38,50a12,12 0 1,0 24,0a12,12 0 1,0 -24,0" fill-rule="evenodd"/></svg><span class="t-bilingual" data-pt="Agente Claude · Merchant Insights Center · 🇦🇷 Argentina" data-es="Agente Claude · Merchant Insights Center · 🇦🇷 Argentina">Agente Claude · Merchant Insights Center · 🇦🇷 Argentina</span></div>
       <div class="card-title" data-pt="Brand Tracking Argentina" data-es="Brand Tracking Argentina">Brand Tracking Argentina</div>
       <div class="card-desc"><span class="t-bilingual" data-pt="Compilado com análise cruzada das ondas do brand tracker Argentina. De 2024 a 2026." data-es="Compilado con análisis cruzado de las ondas del brand tracker Argentina. De 2024 a 2026.">Compilado com análise cruzada das ondas do brand tracker Argentina. De 2024 a 2026.</span></div>
       <div class="card-footer">
-        <a class="btn-open btn-open-coral" href="https://claude.ai/project/019e506c-d4ef-7765-9a6c-35307f9c5566" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</a>
+        <a class="btn-open btn-coral" href="https://claude.ai/project/019e506c-d4ef-7765-9a6c-35307f9c5566" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</a>
         <button class="btn-copy" onclick="copyLink(this,'https://claude.ai/project/019e506c-d4ef-7765-9a6c-35307f9c5566')"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg><span class="t-copy">Copiar link</span></button>
       </div>
     </div>
 
     <div class="card card-claude" data-tipo="tracker" data-mercado="mx">
-      <div class="card-icon-wrap icon-claude"><svg width="20" height="20" viewBox="0 0 100 100" fill="currentColor"><path d="M 46,36 L 47,4 L 53,4 L 54,36 Z M 53.5,35.9 L 70.4,8.7 L 75.6,11.7 L 60.5,39.9 Z M 60.1,39.5 L 88.3,24.4 L 91.3,29.6 L 64.1,46.5 Z M 64,46 L 96,47 L 96,53 L 64,54 Z M 64.1,53.5 L 91.3,70.4 L 88.3,75.6 L 60.5,60.1 Z M 60.1,60.5 L 75.6,88.3 L 70.4,91.3 L 53.5,64.1 Z M 54,64 L 53,96 L 47,96 L 46,64 Z M 46.5,64.1 L 29.6,91.3 L 24.4,88.3 L 39.9,60.5 Z M 39.5,60.1 L 11.7,75.6 L 8.7,70.4 L 35.9,53.5 Z M 36,54 L 4,53 L 4,47 L 36,46 Z M 35.9,46.5 L 8.7,29.6 L 11.7,24.4 L 39.5,39.9 Z M 39.9,39.5 L 24.4,11.7 L 29.6,8.7 L 46.5,35.9 Z M 38,50 a 12,12 0 1,0 24,0 a 12,12 0 1,0 -24,0" fill-rule="evenodd"/></svg></div>
-      <div class="agent-tag"><svg width="9" height="9" viewBox="0 0 100 100" fill="currentColor"><path d="M 46,36 L 47,4 L 53,4 L 54,36 Z M 53.5,35.9 L 70.4,8.7 L 75.6,11.7 L 60.5,39.9 Z M 60.1,39.5 L 88.3,24.4 L 91.3,29.6 L 64.1,46.5 Z M 64,46 L 96,47 L 96,53 L 64,54 Z M 64.1,53.5 L 91.3,70.4 L 88.3,75.6 L 60.5,60.1 Z M 60.1,60.5 L 75.6,88.3 L 70.4,91.3 L 53.5,64.1 Z M 54,64 L 53,96 L 47,96 L 46,64 Z M 46.5,64.1 L 29.6,91.3 L 24.4,88.3 L 39.9,60.5 Z M 39.5,60.1 L 11.7,75.6 L 8.7,70.4 L 35.9,53.5 Z M 36,54 L 4,53 L 4,47 L 36,46 Z M 35.9,46.5 L 8.7,29.6 L 11.7,24.4 L 39.5,39.9 Z M 39.9,39.5 L 24.4,11.7 L 29.6,8.7 L 46.5,35.9 Z M 38,50 a 12,12 0 1,0 24,0 a 12,12 0 1,0 -24,0" fill-rule="evenodd"/></svg><span class="t-bilingual" data-pt="Agente Claude · 🇲🇽 México" data-es="Agente Claude · 🇲🇽 México">Agente Claude · 🇲🇽 México</span></div>
+      <div class="card-icon-wrap icon-claude"><svg width="20" height="20" viewBox="0 0 100 100" fill="currentColor"><path d="M46,36L47,4L53,4L54,36ZM53.5,35.9L70.4,8.7L75.6,11.7L60.5,39.9ZM60.1,39.5L88.3,24.4L91.3,29.6L64.1,46.5ZM64,46L96,47L96,53L64,54ZM64.1,53.5L91.3,70.4L88.3,75.6L60.5,60.1ZM60.1,60.5L75.6,88.3L70.4,91.3L53.5,64.1ZM54,64L53,96L47,96L46,64ZM46.5,64.1L29.6,91.3L24.4,88.3L39.9,60.5ZM39.5,60.1L11.7,75.6L8.7,70.4L35.9,53.5ZM36,54L4,53L4,47L36,46ZM35.9,46.5L8.7,29.6L11.7,24.4L39.5,39.9ZM39.9,39.5L24.4,11.7L29.6,8.7L46.5,35.9ZM38,50a12,12 0 1,0 24,0a12,12 0 1,0 -24,0" fill-rule="evenodd"/></svg></div>
+      <div class="card-tag tag-claude"><svg width="9" height="9" viewBox="0 0 100 100" fill="currentColor"><path d="M46,36L47,4L53,4L54,36ZM53.5,35.9L70.4,8.7L75.6,11.7L60.5,39.9ZM60.1,39.5L88.3,24.4L91.3,29.6L64.1,46.5ZM64,46L96,47L96,53L64,54ZM64.1,53.5L91.3,70.4L88.3,75.6L60.5,60.1ZM60.1,60.5L75.6,88.3L70.4,91.3L53.5,64.1ZM54,64L53,96L47,96L46,64ZM46.5,64.1L29.6,91.3L24.4,88.3L39.9,60.5ZM39.5,60.1L11.7,75.6L8.7,70.4L35.9,53.5ZM36,54L4,53L4,47L36,46ZM35.9,46.5L8.7,29.6L11.7,24.4L39.5,39.9ZM39.9,39.5L24.4,11.7L29.6,8.7L46.5,35.9ZM38,50a12,12 0 1,0 24,0a12,12 0 1,0 -24,0" fill-rule="evenodd"/></svg><span class="t-bilingual" data-pt="Agente Claude · Merchant Insights Center · 🇲🇽 México" data-es="Agente Claude · Merchant Insights Center · 🇲🇽 México">Agente Claude · Merchant Insights Center · 🇲🇽 México</span></div>
       <div class="card-title" data-pt="Brand Tracking México" data-es="Brand Tracking México">Brand Tracking México</div>
       <div class="card-desc"><span class="t-bilingual" data-pt="Compilado com análise cruzada das ondas do brand tracker México. De 2024 a 2026." data-es="Compilado con análisis cruzado de las ondas del brand tracker México. De 2024 a 2026.">Compilado com análise cruzada das ondas do brand tracker México. De 2024 a 2026.</span></div>
       <div class="card-footer">
-        <a class="btn-open btn-open-coral" href="https://claude.ai/project/019e4076-ee7a-7413-b477-37b97ade8fa4" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</a>
+        <a class="btn-open btn-coral" href="https://claude.ai/project/019e4076-ee7a-7413-b477-37b97ade8fa4" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</a>
         <button class="btn-copy" onclick="copyLink(this,'https://claude.ai/project/019e4076-ee7a-7413-b477-37b97ade8fa4')"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg><span class="t-copy">Copiar link</span></button>
       </div>
     </div>
 
     <div class="card card-drive" data-tipo="tracker" data-mercado="latam">
       <div class="card-icon-wrap icon-drive"><svg width="20" height="20" viewBox="0 0 22 22" fill="none"><path d="M4 17l4-7 4 7H4z" fill="#f59e0b" opacity=".8"/><path d="M8 10l4-7 4 7H8z" fill="#fbbf24"/><path d="M12 17l4-7 2 3.5-2 3.5h-4z" fill="#f59e0b" opacity=".5"/></svg></div>
-      <div class="agent-tag" style="color:#92400e;"><svg width="9" height="9" viewBox="0 0 16 16" fill="#92400e"><path d="M2 4a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4z" opacity=".4"/><path d="M5 7h6M5 10h4" stroke="#92400e" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>Arquivo Google Drive · LATAM</div>
+      <div class="card-tag tag-drive"><svg width="9" height="9" viewBox="0 0 16 16" fill="#92400e"><path d="M2 4a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4z" opacity=".4"/><path d="M5 7h6M5 10h4" stroke="#92400e" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>Arquivo Google Drive · 🌍 LATAM</div>
       <div class="card-title" data-pt="Brand Tracking · Arquivos Originais" data-es="Brand Tracking · Archivos Originales">Brand Tracking · Arquivos Originais</div>
       <div class="card-desc"><span class="t-bilingual" data-pt="Pasta completa com todos os estudos originais — Brasil desde 2022, Argentina e México desde 2024." data-es="Carpeta completa con todos los estudios originales — Brasil desde 2022, Argentina y México desde 2024.">Pasta completa com todos os estudos originais — Brasil desde 2022, Argentina e México desde 2024.</span></div>
       <div class="card-footer">
-        <a class="btn-open btn-open-amber" href="https://drive.google.com/drive/u/0/folders/1brNX9HWyT6rGOU5kW2aBNTCxzmrZtlXb" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</a>
+        <a class="btn-open btn-amber" href="https://drive.google.com/drive/u/0/folders/1brNX9HWyT6rGOU5kW2aBNTCxzmrZtlXb" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</a>
         <button class="btn-copy" onclick="copyLink(this,'https://drive.google.com/drive/u/0/folders/1brNX9HWyT6rGOU5kW2aBNTCxzmrZtlXb')"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg><span class="t-copy">Copiar link</span></button>
       </div>
     </div>
 
-    <!-- ── NPS & SATISFAÇÃO ── -->
-    <div class="card" data-tipo="nps" data-mercado="latam">
+    <!-- ══ NPS & SATISFAÇÃO ══ -->
+
+    <div class="card card-nps" data-tipo="nps" data-mercado="latam">
       <div class="card-icon-wrap icon-nps"><svg width="20" height="20" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#16a34a" stroke-width="1.5"/><path d="M5.5 8.5c.5 1 1.5 1.5 2.5 1.5s2-.5 2.5-1.5M6 6h.01M10 6h.01" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-      <div style="font-size:11px;color:#6b7280;margin-bottom:4px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;"><span class="t-bilingual" data-pt="Reporte NPS · LATAM · CX" data-es="Reporte NPS · LATAM · CX">Reporte NPS · LATAM · CX</span></div>
-      <div class="card-title" data-pt="NPS Consolidado · CX" data-es="NPS Consolidado · CX">NPS Consolidado · CX</div>
+      <div class="card-tag tag-nps"><svg width="9" height="9" viewBox="0 0 16 16" fill="#16a34a"><circle cx="8" cy="8" r="6"/></svg><span class="t-bilingual" data-pt="Reporte NPS · 🌍 LATAM · CX" data-es="Reporte NPS · 🌍 LATAM · CX">Reporte NPS · 🌍 LATAM · CX</span></div>
+      <div class="card-title" data-pt="NPS · Consolidado CX" data-es="NPS · Consolidado CX">NPS · Consolidado CX</div>
       <div class="card-desc"><span class="t-bilingual" data-pt="Report contínuo liderado por CX — satisfação geral do merchant por país, segmento, lifecycle e correlação com churn. Atualizado mensalmente." data-es="Reporte continuo liderado por CX — satisfacción general del merchant por país, segmento, lifecycle y correlación con churn. Actualizado mensualmente.">Report contínuo liderado por CX — satisfação geral do merchant por país, segmento, lifecycle e correlação com churn. Atualizado mensalmente.</span></div>
       <div class="card-footer" style="flex-direction:column;align-items:flex-start;gap:8px;">
         <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-          <a class="btn-open" style="background:#16a34a;" href="https://nps-report-zeta.vercel.app/" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="t-open">Report</span></a>
+          <a class="btn-open btn-green" href="https://nps-report-zeta.vercel.app/" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Report</a>
           <a class="btn-open" style="background:#dc2626;" href="https://tableau.linkedstore.com/#/views/NPS/NPSscores1" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Tableau</a>
           <button class="btn-copy" onclick="copyLink(this,'https://nps-report-zeta.vercel.app/')"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg><span class="t-copy">Copiar link</span></button>
         </div>
       </div>
     </div>
 
-    <div class="card" data-tipo="nps" data-mercado="br">
+    <div class="card card-nps" data-tipo="nps" data-mercado="br">
       <div class="card-icon-wrap icon-nps"><svg width="20" height="20" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#16a34a" stroke-width="1.5"/><path d="M5.5 8.5c.5 1 1.5 1.5 2.5 1.5s2-.5 2.5-1.5M6 6h.01M10 6h.01" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-      <div style="font-size:11px;color:#6b7280;margin-bottom:4px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;"><span class="t-bilingual" data-pt="Reporte NPS · 🇧🇷 Brasil · Evento" data-es="Reporte NPS · 🇧🇷 Brasil · Evento">Reporte NPS · 🇧🇷 Brasil · Evento</span></div>
-      <div class="card-title" data-pt="NPS D2C Summit" data-es="NPS D2C Summit">NPS D2C Summit</div>
+      <div class="card-tag tag-nps"><svg width="9" height="9" viewBox="0 0 16 16" fill="#16a34a"><circle cx="8" cy="8" r="6"/></svg><span class="t-bilingual" data-pt="Reporte NPS · 🇧🇷 Brasil · Evento" data-es="Reporte NPS · 🇧🇷 Brasil · Evento">Reporte NPS · 🇧🇷 Brasil · Evento</span></div>
+      <div class="card-title" data-pt="NPS · D2C Summit" data-es="NPS · D2C Summit">NPS · D2C Summit</div>
       <div class="card-desc"><span class="t-bilingual" data-pt="Satisfação dos participantes do D2C Summit Brasil." data-es="Satisfacción de los participantes del D2C Summit Brasil.">Satisfação dos participantes do D2C Summit Brasil.</span></div>
       <div class="card-footer">
-        <a class="btn-open" style="background:#16a34a;" href="https://docs.google.com/presentation/d/1oqtmVI2dL-g6o1vcXmj0oy6_-1E2QdbaqJGDO_-5zc8/edit" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</a>
+        <a class="btn-open btn-green" href="https://docs.google.com/presentation/d/1oqtmVI2dL-g6o1vcXmj0oy6_-1E2QdbaqJGDO_-5zc8/edit" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</a>
         <button class="btn-copy" onclick="copyLink(this,'https://docs.google.com/presentation/d/1oqtmVI2dL-g6o1vcXmj0oy6_-1E2QdbaqJGDO_-5zc8/edit')"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg><span class="t-copy">Copiar link</span></button>
       </div>
     </div>
 
-    <div class="card" data-tipo="nps" data-mercado="ar">
+    <div class="card card-nps" data-tipo="nps" data-mercado="ar">
       <div class="card-icon-wrap icon-nps"><svg width="20" height="20" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#16a34a" stroke-width="1.5"/><path d="M5.5 8.5c.5 1 1.5 1.5 2.5 1.5s2-.5 2.5-1.5M6 6h.01M10 6h.01" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-      <div style="font-size:11px;color:#6b7280;margin-bottom:4px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;"><span class="t-bilingual" data-pt="Reporte NPS · 🇦🇷 Argentina · Evento 2025" data-es="Reporte NPS · 🇦🇷 Argentina · Evento 2025">Reporte NPS · 🇦🇷 Argentina · Evento 2025</span></div>
-      <div class="card-title">NPS Tecnomoda Argentina 2025</div>
+      <div class="card-tag tag-nps"><svg width="9" height="9" viewBox="0 0 16 16" fill="#16a34a"><circle cx="8" cy="8" r="6"/></svg><span class="t-bilingual" data-pt="Reporte NPS · 🇦🇷 Argentina · Evento 2025" data-es="Reporte NPS · 🇦🇷 Argentina · Evento 2025">Reporte NPS · 🇦🇷 Argentina · Evento 2025</span></div>
+      <div class="card-title">NPS · Tecnomoda Argentina 2025</div>
       <div class="card-desc"><span class="t-bilingual" data-pt="Satisfação dos participantes do Tecnomoda Argentina." data-es="Satisfacción de los participantes del Tecnomoda Argentina.">Satisfação dos participantes do Tecnomoda Argentina.</span></div>
       <div class="card-footer" style="flex-direction:column;align-items:flex-start;gap:8px;">
-        <div style="display:flex;align-items:center;gap:8px;width:100%;">
-          <a class="btn-open" style="background:#16a34a;" href="https://docs.google.com/presentation/d/1sTB0tgtNxBXPgZ_9enWuMm98Gw64Dv1SueVGPW9HhUs/edit" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="t-open2">Apresentação</span></a>
-          <a class="btn-open" style="background:#16a34a;" href="https://docs.google.com/document/d/1rZM_UZjg93fMpEnloeOvEdSXgFoeMgHTi3uQcZWlci0/edit" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="t-open3">Relatório</span></a>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <a class="btn-open btn-green" href="https://docs.google.com/presentation/d/1sTB0tgtNxBXPgZ_9enWuMm98Gw64Dv1SueVGPW9HhUs/edit" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="t-open2">Apresentação</span></a>
+          <a class="btn-open btn-green" href="https://docs.google.com/document/d/1rZM_UZjg93fMpEnloeOvEdSXgFoeMgHTi3uQcZWlci0/edit" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="t-open3">Relatório</span></a>
         </div>
       </div>
     </div>
 
-    <div class="card" data-tipo="nps" data-mercado="mx">
+    <div class="card card-nps" data-tipo="nps" data-mercado="mx">
       <div class="card-icon-wrap icon-nps"><svg width="20" height="20" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#16a34a" stroke-width="1.5"/><path d="M5.5 8.5c.5 1 1.5 1.5 2.5 1.5s2-.5 2.5-1.5M6 6h.01M10 6h.01" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-      <div style="font-size:11px;color:#6b7280;margin-bottom:4px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;"><span class="t-bilingual" data-pt="Reporte NPS · 🇲🇽 México · Evento 2026" data-es="Reporte NPS · 🇲🇽 México · Evento 2026">Reporte NPS · 🇲🇽 México · Evento 2026</span></div>
-      <div class="card-title" data-pt="NPS Tecnomoda México 2026" data-es="NPS Tecnomoda México 2026">NPS Tecnomoda México 2026</div>
+      <div class="card-tag tag-nps"><svg width="9" height="9" viewBox="0 0 16 16" fill="#16a34a"><circle cx="8" cy="8" r="6"/></svg><span class="t-bilingual" data-pt="Reporte NPS · 🇲🇽 México · Evento 2026" data-es="Reporte NPS · 🇲🇽 México · Evento 2026">Reporte NPS · 🇲🇽 México · Evento 2026</span></div>
+      <div class="card-title" data-pt="NPS · Tecnomoda México 2026" data-es="NPS · Tecnomoda México 2026">NPS · Tecnomoda México 2026</div>
       <div class="card-desc"><span class="t-bilingual" data-pt="Satisfação dos participantes do Tecnomoda México." data-es="Satisfacción de los participantes del Tecnomoda México.">Satisfação dos participantes do Tecnomoda México.</span></div>
       <div class="card-footer">
-        <a class="btn-open" style="background:#16a34a;" href="https://drive.google.com/drive/folders/1esr1WpZKdSNLzz8-IgfXxRMSh-EXQWYs?usp=sharing" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</a>
+        <a class="btn-open btn-green" href="https://drive.google.com/drive/folders/1esr1WpZKdSNLzz8-IgfXxRMSh-EXQWYs?usp=sharing" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</a>
         <button class="btn-copy" onclick="copyLink(this,'https://drive.google.com/drive/folders/1esr1WpZKdSNLzz8-IgfXxRMSh-EXQWYs?usp=sharing')"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg><span class="t-copy">Copiar link</span></button>
       </div>
     </div>
 
-    <div class="card" data-tipo="nps" data-mercado="br">
+    <div class="card card-nps" data-tipo="nps" data-mercado="br">
       <div class="card-icon-wrap icon-nps"><svg width="20" height="20" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#16a34a" stroke-width="1.5"/><path d="M5.5 8.5c.5 1 1.5 1.5 2.5 1.5s2-.5 2.5-1.5M6 6h.01M10 6h.01" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-      <div style="font-size:11px;color:#6b7280;margin-bottom:4px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;"><span class="t-bilingual" data-pt="Reporte NPS · 🇧🇷 Brasil · Evento 2026" data-es="Reporte NPS · 🇧🇷 Brasil · Evento 2026">Reporte NPS · 🇧🇷 Brasil · Evento 2026</span></div>
-      <div class="card-title" data-pt="NPS NuvemCommerce Insights 2026" data-es="NPS NuvemCommerce Insights 2026">NPS NuvemCommerce Insights 2026</div>
+      <div class="card-tag tag-nps"><svg width="9" height="9" viewBox="0 0 16 16" fill="#16a34a"><circle cx="8" cy="8" r="6"/></svg><span class="t-bilingual" data-pt="Reporte NPS · 🇧🇷 Brasil · Evento 2026" data-es="Reporte NPS · 🇧🇷 Brasil · Evento 2026">Reporte NPS · 🇧🇷 Brasil · Evento 2026</span></div>
+      <div class="card-title" data-pt="NPS · NuvemCommerce Insights 2026" data-es="NPS · NuvemCommerce Insights 2026">NPS · NuvemCommerce Insights 2026</div>
       <div class="card-desc"><span class="t-bilingual" data-pt="Satisfação dos participantes do NuvemCommerce Insights 2026 Brasil." data-es="Satisfacción de los participantes del NuvemCommerce Insights 2026 Brasil.">Satisfação dos participantes do NuvemCommerce Insights 2026 Brasil.</span></div>
       <div class="card-footer">
-        <a class="btn-open" style="background:#16a34a;" href="https://docs.google.com/forms/d/1QyyVI8ykAL2mI2tIYUt7W3EqM0xaHk2Umex_vAL_Jx0/edit#responses" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</a>
+        <a class="btn-open btn-green" href="https://docs.google.com/forms/d/1QyyVI8ykAL2mI2tIYUt7W3EqM0xaHk2Umex_vAL_Jx0/edit#responses" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</a>
         <button class="btn-copy" onclick="copyLink(this,'https://docs.google.com/forms/d/1QyyVI8ykAL2mI2tIYUt7W3EqM0xaHk2Umex_vAL_Jx0/edit#responses')"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg><span class="t-copy">Copiar link</span></button>
       </div>
     </div>
 
-    <div class="card" data-tipo="nps" data-mercado="br">
+    <div class="card card-nps" data-tipo="nps" data-mercado="br">
       <div class="card-icon-wrap icon-nps"><svg width="20" height="20" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#16a34a" stroke-width="1.5"/><path d="M5.5 8.5c.5 1 1.5 1.5 2.5 1.5s2-.5 2.5-1.5M6 6h.01M10 6h.01" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-      <div style="font-size:11px;color:#6b7280;margin-bottom:4px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;"><span class="t-bilingual" data-pt="Reporte NPS · 🇧🇷 Brasil · Evento 2026" data-es="Reporte NPS · 🇧🇷 Brasil · Evento 2026">Reporte NPS · 🇧🇷 Brasil · Evento 2026</span></div>
-      <div class="card-title" data-pt="NPS Lançamento XD Blumenau 2026" data-es="NPS Lanzamiento XD Blumenau 2026">NPS Lançamento XD Blumenau 2026</div>
+      <div class="card-tag tag-nps"><svg width="9" height="9" viewBox="0 0 16 16" fill="#16a34a"><circle cx="8" cy="8" r="6"/></svg><span class="t-bilingual" data-pt="Reporte NPS · 🇧🇷 Brasil · Evento 2026" data-es="Reporte NPS · 🇧🇷 Brasil · Evento 2026">Reporte NPS · 🇧🇷 Brasil · Evento 2026</span></div>
+      <div class="card-title" data-pt="NPS · Lançamento XD Blumenau 2026" data-es="NPS · Lanzamiento XD Blumenau 2026">NPS · Lançamento XD Blumenau 2026</div>
       <div class="card-desc"><span class="t-bilingual" data-pt="Satisfação dos participantes do lançamento XD Blumenau 2026." data-es="Satisfacción de los participantes del lanzamiento XD Blumenau 2026.">Satisfação dos participantes do lançamento XD Blumenau 2026.</span></div>
       <div class="card-footer">
-        <a class="btn-open" style="background:#16a34a;" href="https://docs.google.com/forms/d/1SkDqcHuQqLYUSwbNtRFKGuqi1u87u4R4M_lVcDjh77c/edit#responses" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</a>
+        <a class="btn-open btn-green" href="https://docs.google.com/forms/d/1SkDqcHuQqLYUSwbNtRFKGuqi1u87u4R4M_lVcDjh77c/edit#responses" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</a>
         <button class="btn-copy" onclick="copyLink(this,'https://docs.google.com/forms/d/1SkDqcHuQqLYUSwbNtRFKGuqi1u87u4R4M_lVcDjh77c/edit#responses')"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg><span class="t-copy">Copiar link</span></button>
       </div>
     </div>
 
-    <div class="card" data-tipo="nps" data-mercado="br">
+    <div class="card card-nps" data-tipo="nps" data-mercado="br">
       <div class="card-icon-wrap icon-nps"><svg width="20" height="20" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#16a34a" stroke-width="1.5"/><path d="M5.5 8.5c.5 1 1.5 1.5 2.5 1.5s2-.5 2.5-1.5M6 6h.01M10 6h.01" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-      <div style="font-size:11px;color:#6b7280;margin-bottom:4px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;"><span class="t-bilingual" data-pt="Reporte NPS · 🇧🇷 Brasil · Evento 2026" data-es="Reporte NPS · 🇧🇷 Brasil · Evento 2026">Reporte NPS · 🇧🇷 Brasil · Evento 2026</span></div>
-      <div class="card-title" data-pt="NPS Evento de Lumi 2026" data-es="NPS Evento de Lumi 2026">NPS Evento de Lumi 2026</div>
+      <div class="card-tag tag-nps"><svg width="9" height="9" viewBox="0 0 16 16" fill="#16a34a"><circle cx="8" cy="8" r="6"/></svg><span class="t-bilingual" data-pt="Reporte NPS · 🇧🇷 Brasil · Evento 2026" data-es="Reporte NPS · 🇧🇷 Brasil · Evento 2026">Reporte NPS · 🇧🇷 Brasil · Evento 2026</span></div>
+      <div class="card-title" data-pt="NPS · Evento de Lumi 2026" data-es="NPS · Evento de Lumi 2026">NPS · Evento de Lumi 2026</div>
       <div class="card-desc"><span class="t-bilingual" data-pt="Satisfação dos participantes do evento de lançamento de Lumi 2026." data-es="Satisfacción de los participantes del evento de lanzamiento de Lumi 2026.">Satisfação dos participantes do evento de lançamento de Lumi 2026.</span></div>
       <div class="card-footer">
-        <a class="btn-open" style="background:#16a34a;" href="https://docs.google.com/spreadsheets/d/14WB9nRODmYKB_lDJ1jcKEnDZnll6EpSzHNgN9JWGHw0/edit?resourcekey=&gid=1094963374#gid=1094963374" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</a>
-        <button class="btn-copy" onclick="copyLink(this,'https://docs.google.com/spreadsheets/d/14WB9nRODmYKB_lDJ1jcKEnDZnll6EpSzHNgN9JWGHw0/edit?resourcekey=&gid=1094963374#gid=1094963374')"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg><span class="t-copy">Copiar link</span></button>
+        <a class="btn-open btn-green" href="https://docs.google.com/spreadsheets/d/14WB9nRODmYKB_lDJ1jcKEnDZnll6EpSzHNgN9JWGHw0/edit?resourcekey=&gid=1094963374#gid=1094963374" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</a>
+        <button class="btn-copy" onclick="copyLink(this,'https://docs.google.com/spreadsheets/d/14WB9nRODmYKB_lDJ1jcKEnDZnll6EpSzHNgN9JWGHw0/edit?resourcekey=&gid=1094963374')"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg><span class="t-copy">Copiar link</span></button>
       </div>
     </div>
 
-    <!-- ── PESQUISAS & INTELIGÊNCIA ── -->
-    <div class="card" data-tipo="pesquisa" data-mercado="latam" style="border-color:#ddd6fe;background:#faf5ff;">
+    <!-- ══ PESQUISAS & INTELIGÊNCIA ══ -->
+
+    <div class="card card-research" data-tipo="pesquisa" data-mercado="latam">
       <div class="card-icon-wrap icon-research"><svg width="20" height="20" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" stroke="#7c3aed" stroke-width="1.2"/><path d="M5 6h6M5 9h2" stroke="#7c3aed" stroke-width="1.2" stroke-linecap="round"/></svg></div>
-      <div class="agent-tag" style="color:#6d28d9;"><svg width="9" height="9" viewBox="0 0 16 16" fill="#6d28d9" opacity=".6"><circle cx="8" cy="8" r="6"/></svg>Repositório Dovetail · LATAM</div>
+      <div class="card-tag tag-research"><svg width="9" height="9" viewBox="0 0 16 16" fill="#7c3aed" opacity=".7"><circle cx="8" cy="8" r="6"/></svg>Repositório Dovetail · 🌍 LATAM</div>
       <div class="card-title" data-pt="Pesquisas de Produtos e Soluções (PMM)" data-es="Investigaciones de Productos y Soluciones (PMM)">Pesquisas de Produtos e Soluções (PMM)</div>
       <div class="card-desc"><span class="t-bilingual" data-pt="Repositório de pesquisas qualitativas e quantitativas sobre produtos e soluções da Nuvemshop. Encontre quotes, e muito mais." data-es="Repositorio de investigaciones cualitativas y cuantitativas sobre productos y soluciones de Nuvemshop. Encontrá quotes, y mucho más.">Repositório de pesquisas qualitativas e quantitativas sobre produtos e soluções da Nuvemshop. Encontre quotes, e muito mais.</span></div>
       <div class="card-footer">
-        <button class="btn-open btn-open-purple" onclick="openAccessModal('https://helpful-wolverine-3h5n.dovetail.com/chat/2jm3H4QAhQGDc5c5bo6Y9u')"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</button>
+        <button class="btn-open btn-purple" onclick="openAccessModal('https://helpful-wolverine-3h5n.dovetail.com/chat/2jm3H4QAhQGDc5c5bo6Y9u')"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</button>
         <button class="btn-copy" onclick="copyLink(this,'https://helpful-wolverine-3h5n.dovetail.com/chat/2jm3H4QAhQGDc5c5bo6Y9u')"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg><span class="t-copy">Copiar link</span></button>
       </div>
     </div>
 
-    <div class="card" data-tipo="pesquisa" data-mercado="br" style="border-color:#ddd6fe;background:#faf5ff;">
+    <div class="card card-research" data-tipo="pesquisa" data-mercado="br">
+      <div class="card-icon-wrap icon-research"><svg width="20" height="20" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" stroke="#7c3aed" stroke-width="1.2"/><path d="M5 5h6M5 8h4M5 11h2" stroke="#7c3aed" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+      <div class="card-tag tag-research"><svg width="9" height="9" viewBox="0 0 16 16" fill="#7c3aed" opacity=".7"><circle cx="8" cy="8" r="6"/></svg><span class="t-bilingual" data-pt="Estratégia PMM · 🇧🇷 Brasil" data-es="Estrategia PMM · 🇧🇷 Brasil">Estratégia PMM · 🇧🇷 Brasil</span></div>
+      <div class="card-title" data-pt="ICP Mapping" data-es="ICP Mapping">ICP Mapping</div>
+      <div class="card-desc"><span class="t-bilingual" data-pt="Perfis de ICP, mapa de calor de conhecimento, planos por segmento e recomendações de plano. Base estratégica do PMM Brasil." data-es="Perfiles de ICP, mapa de calor de conocimiento, planes por segmento y recomendaciones de plan. Base estratégica del PMM Brasil.">Perfis de ICP, mapa de calor de conhecimento, planos por segmento e recomendações de plano. Base estratégica do PMM Brasil.</span></div>
+      <div class="card-footer">
+        <button class="btn-open btn-purple" onclick="openAccessModal('https://outputs-liart-one.vercel.app/')"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</button>
+        <button class="btn-copy" onclick="copyLink(this,'https://outputs-liart-one.vercel.app/')"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg><span class="t-copy">Copiar link</span></button>
+      </div>
+    </div>
+
+    <div class="card card-research" data-tipo="pesquisa" data-mercado="br">
+      <div class="card-icon-wrap icon-research"><svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M8 2a3 3 0 100 6 3 3 0 000-6zM3 13c0-2.76 2.24-5 5-5s5 2.24 5 5" stroke="#7c3aed" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+      <div class="card-tag tag-research"><svg width="9" height="9" viewBox="0 0 16 16" fill="#7c3aed" opacity=".7"><circle cx="8" cy="8" r="6"/></svg><span class="t-bilingual" data-pt="Validação de Conteúdo · 🇧🇷 Brasil" data-es="Validación de Contenido · 🇧🇷 Brasil">Validação de Conteúdo · 🇧🇷 Brasil</span></div>
+      <div class="card-title" data-pt="Personas Sintéticas" data-es="Personas Sintéticas">Personas Sintéticas</div>
+      <div class="card-desc"><span class="t-bilingual" data-pt="Valide textos de marketing pelos olhos de cada ICP — reação simulada, reescrita sugerida e prompts prontos por estágio do lifecycle." data-es="Validá textos de marketing por los ojos de cada ICP — reacción simulada, reescritura sugerida y prompts listos por etapa del lifecycle.">Valide textos de marketing pelos olhos de cada ICP — reação simulada, reescrita sugerida e prompts prontos por estágio do lifecycle.</span></div>
+      <div class="card-footer">
+        <button class="btn-open btn-purple" onclick="openAccessModal('https://outputs-liart-one.vercel.app/')"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</button>
+        <button class="btn-copy" onclick="copyLink(this,'https://outputs-liart-one.vercel.app/')"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg><span class="t-copy">Copiar link</span></button>
+      </div>
+    </div>
+
+    <div class="card card-research" data-tipo="pesquisa" data-mercado="br">
       <div class="card-icon-wrap icon-research"><svg width="20" height="20" viewBox="0 0 16 16" fill="none"><circle cx="6" cy="6" r="4" stroke="#7c3aed" stroke-width="1.2"/><path d="M9 9l4 4" stroke="#7c3aed" stroke-width="1.4" stroke-linecap="round"/></svg></div>
-      <div class="agent-tag" style="color:#6d28d9;"><svg width="9" height="9" viewBox="0 0 16 16" fill="#6d28d9" opacity=".6"><circle cx="8" cy="8" r="6"/></svg><span class="t-bilingual" data-pt="Pesquisa Qualitativa · 🇧🇷 Brasil" data-es="Investigación Cualitativa · 🇧🇷 Brasil">Pesquisa Qualitativa · 🇧🇷 Brasil</span></div>
-      <div class="card-title" data-pt="Buyer Personas Nuvemshop Next" data-es="Buyer Personas Nuvemshop Next">Buyer Personas Nuvemshop Next</div>
+      <div class="card-tag tag-research"><svg width="9" height="9" viewBox="0 0 16 16" fill="#7c3aed" opacity=".7"><circle cx="8" cy="8" r="6"/></svg><span class="t-bilingual" data-pt="Pesquisa de Audiência · 🇧🇷 Brasil" data-es="Investigación de Audiencia · 🇧🇷 Brasil">Pesquisa de Audiência · 🇧🇷 Brasil</span></div>
+      <div class="card-title" data-pt="Buyer Personas · Nuvemshop Next" data-es="Buyer Personas · Nuvemshop Next">Buyer Personas · Nuvemshop Next</div>
       <div class="card-desc"><span class="t-bilingual" data-pt="Perfis aprofundados dos compradores Nuvemshop Next no Brasil — comportamento, motivações, dores e jornada de compra." data-es="Perfiles en profundidad de los compradores Nuvemshop Next en Brasil — comportamiento, motivaciones, dolores y journey de compra.">Perfis aprofundados dos compradores Nuvemshop Next no Brasil — comportamento, motivações, dores e jornada de compra.</span></div>
       <div class="card-footer" style="flex-direction:column;align-items:flex-start;gap:8px;">
         <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-          <a class="btn-open btn-open-purple" href="https://docs.google.com/presentation/d/1h2y_xOB5E9kiNtUB5p-nAwszVjPYtLvOQEO-iRPGrd8/edit?slide=id.g2d47ab34254_0_606" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Resumo</a>
-          <a class="btn-open btn-open-purple" href="https://docs.google.com/document/d/1zsmdgP1lnvdIDt3vHnriQUHJMsEnSNznUb8dCiygpPA/edit?tab=t.0" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Completo</a>
+          <a class="btn-open btn-purple" href="https://docs.google.com/presentation/d/1h2y_xOB5E9kiNtUB5p-nAwszVjPYtLvOQEO-iRPGrd8/edit?slide=id.g2d47ab34254_0_606" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="t-open2">Apresentação</span></a>
+          <a class="btn-open btn-purple" href="https://docs.google.com/document/d/1zsmdgP1lnvdIDt3vHnriQUHJMsEnSNznUb8dCiygpPA/edit?tab=t.0" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="t-open3">Relatório</span></a>
           <button class="btn-copy" onclick="copyLink(this,'https://docs.google.com/presentation/d/1h2y_xOB5E9kiNtUB5p-nAwszVjPYtLvOQEO-iRPGrd8/edit')"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg><span class="t-copy">Copiar link</span></button>
         </div>
       </div>
     </div>
 
-    <div class="card card-drive" data-tipo="pesquisa" data-mercado="latam" style="background:#f0fdfa;border-color:#99f6e4;">
-      <div class="card-icon-wrap icon-teal"><svg width="20" height="20" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#0d9488" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#0d9488" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="agent-tag" style="color:#0f766e;"><svg width="9" height="9" viewBox="0 0 16 16" fill="#0d9488"><circle cx="8" cy="8" r="6"/></svg>Arquivo Google Drive · LATAM</div>
+    <div class="card card-llm" data-tipo="pesquisa" data-mercado="latam">
+      <div class="card-icon-wrap icon-llm"><svg width="20" height="20" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#2563eb" stroke-width="1.2"/><path d="M5 8h6M8 5v6" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+      <div class="card-tag tag-llm"><svg width="9" height="9" viewBox="0 0 16 16" fill="#2563eb" opacity=".7"><circle cx="8" cy="8" r="6"/></svg>Arquivo Google Drive · 🌍 LATAM</div>
       <div class="card-title" data-pt="AI Brand Reputation · LLM Pulse" data-es="AI Brand Reputation · LLM Pulse">AI Brand Reputation · LLM Pulse</div>
       <div class="card-desc"><span class="t-bilingual" data-pt="Monitoramento mensal de como a Nuvemshop aparece nas buscas feitas diretamente em modelos de IA — ChatGPT, Gemini, Perplexity, DeepSeek e Grok — frente aos concorrentes. Relatórios por mercado a partir de maio de 2026, avaliando visibilidade, sentimento e reputação em 7 dimensões." data-es="Monitoreo mensual de cómo aparece Tiendanube en búsquedas directas en modelos de IA — ChatGPT, Gemini, Perplexity, DeepSeek y Grok — frente a los competidores. Reportes por mercado desde mayo de 2026, evaluando visibilidad, sentimiento y reputación en 7 dimensiones.">Monitoramento mensal de como a Nuvemshop aparece nas buscas feitas diretamente em modelos de IA — ChatGPT, Gemini, Perplexity, DeepSeek e Grok — frente aos concorrentes. Relatórios por mercado a partir de maio de 2026, avaliando visibilidade, sentimento e reputação em 7 dimensões.</span></div>
       <div class="card-footer">
-        <button class="btn-open btn-open-teal" onclick="openAccessModal('https://drive.google.com/drive/u/0/folders/1Jy3F3D7Gu7hQLUr60bllgMCjynakJep5')"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</button>
+        <button class="btn-open btn-blue" onclick="openAccessModal('https://drive.google.com/drive/u/0/folders/1Jy3F3D7Gu7hQLUr60bllgMCjynakJep5')"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir</button>
         <button class="btn-copy" onclick="copyLink(this,'https://drive.google.com/drive/u/0/folders/1Jy3F3D7Gu7hQLUr60bllgMCjynakJep5')"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg><span class="t-copy">Copiar link</span></button>
       </div>
     </div>
@@ -378,24 +416,21 @@ function checkPass(){var v=document.getElementById('gate-input').value;if(v==='i
   </div>
 </main>
 
-<!-- Access restricted modal -->
+<!-- Modal de acesso restrito -->
 <div class="modal-overlay" id="access-modal" onclick="if(event.target===this)closeAccessModal()">
   <div class="access-modal">
-    <div class="access-modal-icon"><svg width="22" height="22" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="7" rx="1.5" stroke="#16a34a" stroke-width="1.3"/><path d="M5 7V5a3 3 0 016 0v2" stroke="#16a34a" stroke-width="1.3" stroke-linecap="round"/></svg></div>
-    <div class="access-modal-title" id="access-modal-title-pt">Acesso restrito</div>
-    <div class="access-modal-desc" id="access-modal-desc-pt">Este recurso tem acesso restrito. Se precisar de acesso ou tiver dúvidas, fale com Alice Araújo.</div>
-    <div class="access-contact-row">
-      <a class="btn-contact btn-contact-email" href="mailto:alice.araujo@nuvemshop.com.br"><svg viewBox="0 0 16 16" fill="none" width="13" height="13"><rect x="2" y="4" width="12" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M2 5l6 4 6-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>Escrever e-mail</a>
-      <a class="btn-contact btn-contact-slack" href="https://nuvemshop.slack.com/app_redirect?channel=alice.araujo" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="13" height="13"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.2"/><path d="M5.5 8h5M8 5.5v5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>Slack</a>
+    <div class="access-icon"><svg width="22" height="22" viewBox="0 0 16 16" fill="none"><path d="M8 1a4 4 0 014 4v1H4V5a4 4 0 014-4z" stroke="#2563eb" stroke-width="1.2" stroke-linecap="round"/><rect x="2" y="7" width="12" height="8" rx="1.5" stroke="#2563eb" stroke-width="1.2"/></svg></div>
+    <div class="access-title" id="access-title-pt">Atenção — acesso restrito</div>
+    <div class="access-desc" id="access-desc-pt">Este recurso pode ter acesso restrito. Clique abaixo para tentar acessar diretamente — se tiver credenciais, vai abrir normalmente.<br><br>Caso não tenha acesso ou encontre dificuldades, fale com Alice Araújo.</div>
+    <a class="access-cta" id="access-cta-link" href="#" target="_blank" onclick="closeAccessModal()">Clique aqui para acessar</a>
+    <div class="access-note">
+      Sem acesso? Escreva para <a href="mailto:alice.araujo@nuvemshop.com.br">alice.araujo@nuvemshop.com.br</a> ou pelo <a href="https://nuvemshop.slack.com/app_redirect?channel=alice.araujo" target="_blank">Slack</a>.
     </div>
-    <div class="access-modal-footer">
-      <button class="btn-cancel" onclick="closeAccessModal()">Fechar</button>
-      <a class="btn-contact btn-contact-open" id="access-modal-link" href="#" target="_blank"><svg viewBox="0 0 16 16" fill="none" width="12" height="12"><path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Tenho acesso — Abrir</a>
-    </div>
+    <div class="access-footer"><button class="btn-close-access" onclick="closeAccessModal()">Fechar</button></div>
   </div>
 </div>
 
-<!-- Feedback modal -->
+<!-- Feedback button + modal -->
 <button class="feedback-btn" onclick="openModal()">
   <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M14 2H2a1 1 0 00-1 1v8a1 1 0 001 1h3l3 2 3-2h3a1 1 0 001-1V3a1 1 0 00-1-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M5 6h6M5 9h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
   Sua opinião importa
@@ -411,7 +446,7 @@ function checkPass(){var v=document.getElementById('gate-input').value;if(v==='i
       <div class="modal-field"><label>Seu nome e área</label><input type="text" id="f-name" placeholder="Ex: Alice, Brand & Comms"/></div>
       <div class="modal-actions">
         <button class="btn-cancel" onclick="closeModal()">Cancelar</button>
-        <button class="btn-submit" id="btn-submit" onclick="submitFeedback()">Enviar</button>
+        <button class="btn-submit" onclick="submitFeedback()">Enviar</button>
       </div>
     </div>
     <div class="modal-success" id="modal-success">
@@ -442,18 +477,14 @@ function copyLink(btn,url){
   navigator.clipboard.writeText(url).then(()=>{const o=btn.innerHTML;btn.textContent='✓ Copiado';setTimeout(()=>btn.innerHTML=o,1800);});
 }
 function openAccessModal(url){
-  document.getElementById('access-modal-link').href=url;
+  document.getElementById('access-cta-link').href=url;
   document.getElementById('access-modal').classList.add('open');
 }
 function closeAccessModal(){document.getElementById('access-modal').classList.remove('open');}
-function openModal(){
-  document.getElementById('modal').classList.add('open');
-  document.getElementById('modal-form').style.display='';
-  document.getElementById('modal-success').style.display='none';
-}
+function openModal(){document.getElementById('modal').classList.add('open');document.getElementById('modal-form').style.display='';document.getElementById('modal-success').style.display='none';}
 function closeModal(){document.getElementById('modal').classList.remove('open');}
 async function submitFeedback(){
-  const btn=document.getElementById('btn-submit');
+  const btn=document.querySelector('.btn-submit');
   const msg=document.getElementById('f-msg').value;
   const name=document.getElementById('f-name').value;
   const type=document.getElementById('f-type').value;
@@ -469,43 +500,38 @@ function setLang(lang,btn){
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   const isPT=lang==='pt';
-  const bt=document.getElementById('banner-text');
-  if(bt)bt.textContent=isPT?'Uso interno — informações confidenciais e restritas a colaboradores Nuvemshop.':'Uso interno — información confidencial y restringida a colaboradores Nuvemshop.';
-  const hh=document.getElementById('hero-h1');
-  if(hh)hh.innerHTML=isPT?'A percepção do merchant,<br><span id="hero-span">em um só lugar</span>':'La percepción del merchant,<br><span id="hero-span">en un mismo lugar</span>';
-  const hs=document.getElementById('hero-sub');
-  if(hs)hs.textContent=isPT?'Percepção de marca, das soluções, satisfação geral com a Nuvemshop e com os nossos eventos.':'Percepción de marca, de las soluciones, satisfacción general con Tiendanube y con nuestros eventos.';
-  const pt=document.getElementById('page-title');if(pt)pt.textContent=isPT?'Fontes':'Fuentes';
-  const ps=document.getElementById('page-sub');if(ps)ps.textContent=isPT?'Acesse os documentos e projetos por tipo e mercado.':'Accede a los documentos y proyectos por tipo y mercado.';
-  const rl=document.getElementById('results-label');if(rl)rl.textContent=isPT?'Mostrando':'Mostrando';
-  const ro=document.getElementById('results-of');if(ro)ro.textContent=isPT?'de':'de';
-  const nu=document.getElementById('nav-updated');if(nu)nu.textContent=isPT?'Atualizado 19/06/2026':'Actualizado 19/06/2026';
-  const logo=document.getElementById('nav-logo-img');if(logo){logo.alt=isPT?'Nuvemshop':'Tiendanube';}
-  document.querySelectorAll('.t-copy').forEach(el=>el.textContent=isPT?'Copiar link':'Copiar enlace');
-  document.querySelectorAll('.t-open').forEach(el=>el.textContent=isPT?'Report':'Report');
-  document.querySelectorAll('.t-open2').forEach(el=>el.textContent=isPT?'Apresentação':'Presentación');
-  document.querySelectorAll('.t-open3').forEach(el=>el.textContent=isPT?'Relatório':'Reporte');
+  const set=(id,pt,es)=>{const el=document.getElementById(id);if(el)el.textContent=isPT?pt:es;};
+  set('banner-text','Uso interno — informações confidenciais e restritas a colaboradores Nuvemshop.','Uso interno — información confidencial y restringida a colaboradores Nuvemshop.');
+  const hh=document.getElementById('hero-h1');if(hh)hh.innerHTML=isPT?'A percepção do merchant,<br><span id="hero-span">em um só lugar</span>':'La percepción del merchant,<br><span id="hero-span">en un mismo lugar</span>';
+  set('hero-sub','Percepção de marca, das soluções, satisfação geral com a Nuvemshop e com os nossos eventos.','Percepción de marca, de las soluciones, satisfacción general con Tiendanube y con nuestros eventos.');
+  set('page-title','Fontes','Fuentes');
+  set('page-sub','Acesse os documentos e projetos por tipo e mercado.','Accede a los documentos y proyectos por tipo y mercado.');
+  set('results-label','Mostrando','Mostrando');
+  set('results-of','de','de');
+  set('nav-updated','Atualizado 19/06/2026','Actualizado 19/06/2026');
+  set('access-title-pt','Atenção — acesso restrito','Atención — acceso restringido');
+  set('access-desc-pt',
+    'Este recurso pode ter acesso restrito. Clique abaixo para tentar acessar diretamente — se tiver credenciais, vai abrir normalmente.\n\nCaso não tenha acesso ou encontre dificuldades, fale com Alice Araújo.',
+    'Este recurso puede tener acceso restringido. Hacé clic abajo para intentar acceder directamente — si tenés credenciales, se abrirá normalmente.\n\nSi no tenés acceso o encontrás dificultades, hablá con Alice Araújo.');
   document.querySelectorAll('.filter-pill[data-value="all"] span').forEach(el=>el.textContent=isPT?'Todos':'Todos');
   document.querySelectorAll('.filter-pill[data-value="tracker"] span').forEach(el=>el.textContent='Brand Tracking');
   document.querySelectorAll('.filter-pill[data-value="nps"] span').forEach(el=>el.textContent=isPT?'NPS & Satisfação':'NPS & Satisfacción');
   document.querySelectorAll('.filter-pill[data-value="pesquisa"] span').forEach(el=>el.textContent=isPT?'Pesquisas & Inteligência':'Investigaciones & Inteligencia');
-  document.querySelectorAll('.t-latam').forEach(el=>el.textContent='LATAM');
+  document.querySelectorAll('.t-latam').forEach(el=>el.textContent='🌍 LATAM');
   document.querySelectorAll('.t-br').forEach(el=>el.textContent='🇧🇷 Brasil');
   document.querySelectorAll('.t-ar').forEach(el=>el.textContent='🇦🇷 Argentina');
   document.querySelectorAll('.t-mx').forEach(el=>el.textContent='🇲🇽 México');
+  document.querySelectorAll('.t-copy').forEach(el=>el.textContent=isPT?'Copiar link':'Copiar enlace');
+  document.querySelectorAll('.t-open2').forEach(el=>el.textContent=isPT?'Apresentação':'Presentación');
+  document.querySelectorAll('.t-open3').forEach(el=>el.textContent=isPT?'Relatório':'Reporte');
   document.querySelectorAll('[data-pt][data-es]').forEach(el=>{el.textContent=isPT?el.dataset.pt:el.dataset.es;});
   document.querySelectorAll('.t-bilingual').forEach(el=>{el.textContent=isPT?el.dataset.pt:el.dataset.es;});
-  // Access modal
-  const aTitle=document.getElementById('access-modal-title-pt');
-  if(aTitle)aTitle.textContent=isPT?'Acesso restrito':'Acceso restringido';
-  const aDesc=document.getElementById('access-modal-desc-pt');
-  if(aDesc)aDesc.textContent=isPT?'Este recurso tem acesso restrito. Se precisar de acesso ou tiver dúvidas, fale com Alice Araújo.':'Este recurso tiene acceso restringido. Si necesitás acceso o tenés dudas, hablá con Alice Araújo.';
   const fb=document.querySelector('.feedback-btn');
   if(fb){const svg=fb.querySelector('svg');fb.innerHTML='';if(svg)fb.appendChild(svg);fb.appendChild(document.createTextNode(isPT?' Sua opinião importa':' Tu opinión importa'));}
   const mt=document.querySelector('.modal-title');if(mt)mt.textContent=isPT?'Sua opinião importa':'Tu opinión importa';
   const msub=document.querySelector('.modal-sub');if(msub)msub.textContent=isPT?'Você tem uma pesquisa com consumidor e quer colaborar com o hub? Encontrou um link quebrado? Nos conte.':'¿Tenés una investigación con clientes y querés colaborar con el hub? ¿Encontraste un enlace roto? Contanos.';
+  const acta=document.getElementById('access-cta-link');if(acta)acta.textContent=isPT?'Clique aqui para acessar':'Hacé clic aquí para acceder';
 }
-// Init total count
 document.addEventListener('DOMContentLoaded',function(){
   const total=document.querySelectorAll('#cards-grid .card').length;
   document.getElementById('results-count').textContent=total;
