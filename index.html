@@ -421,12 +421,12 @@ function checkPass(){var v=document.getElementById('gate-input').value;if(v==='i
 <!-- Modal de acesso restrito -->
 <div class="modal-overlay" id="access-modal" onclick="if(event.target===this)closeAccessModal()">
   <div class="access-modal">
-    <div class="access-desc" id="access-desc-pt">Este conteúdo pode ter acesso restrito.</div>
+    <div class="access-desc" id="access-desc-pt">Este link pode ter acesso restrito. Caso tenha problemas de acesso, escreva pra gente por e-mail ou Slack nos links abaixo.</div>
     <a class="access-cta" id="access-cta-link" href="#" target="_blank" onclick="closeAccessModal()">Ir para o site</a>
     <div class="access-note">
-      Com dificuldades? Fale com a gente via <a href="mailto:alice.araujo@nuvemshop.com.br">E-mail</a> &nbsp;·&nbsp; <a href="https://nuvemshop.slack.com/app_redirect?channel=alice.araujo" target="_blank">Slack</a>
+      <a href="mailto:alice.araujo@nuvemshop.com.br" id="note-email">E-mail</a> &nbsp;·&nbsp; <a href="https://nuvemshop.slack.com/app_redirect?channel=alice.araujo" target="_blank" id="note-slack">Slack</a>
     </div>
-    <div class="access-footer"><button class="btn-close-access" onclick="closeAccessModal()">Fechar</button></div>
+    <div class="access-footer"><button class="btn-close-access" id="btn-close-access" onclick="closeAccessModal()">Fechar</button></div>
   </div>
 </div>
 
