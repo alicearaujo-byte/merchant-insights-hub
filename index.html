@@ -421,10 +421,10 @@ function checkPass(){var v=document.getElementById('gate-input').value;if(v==='i
 <!-- Modal de acesso restrito -->
 <div class="modal-overlay" id="access-modal" onclick="if(event.target===this)closeAccessModal()">
   <div class="access-modal">
-    <div class="access-desc" id="access-desc-pt">Este conteúdo pode ter acesso restrito. Caso tenha dificuldades, entre em contato com Alice Araújo.</div>
+    <div class="access-desc" id="access-desc-pt">Este conteúdo pode ter acesso restrito.</div>
     <a class="access-cta" id="access-cta-link" href="#" target="_blank" onclick="closeAccessModal()">Ir para o site</a>
     <div class="access-note">
-      <a href="mailto:alice.araujo@nuvemshop.com.br">E-mail</a> &nbsp;·&nbsp; <a href="https://nuvemshop.slack.com/app_redirect?channel=alice.araujo" target="_blank">Slack</a>
+      Com dificuldades? Fale com a gente via <a href="mailto:alice.araujo@nuvemshop.com.br">E-mail</a> &nbsp;·&nbsp; <a href="https://nuvemshop.slack.com/app_redirect?channel=alice.araujo" target="_blank">Slack</a>
     </div>
     <div class="access-footer"><button class="btn-close-access" onclick="closeAccessModal()">Fechar</button></div>
   </div>
@@ -510,8 +510,8 @@ function setLang(lang,btn){
   set('results-of','de','de');
   set('nav-updated','Atualizado 19/06/2026','Actualizado 19/06/2026');
   set('access-desc-pt',
-    'Este contenido puede tener acceso restringido. Si tenés dificultades, contactá a Alice Araújo.',
-    'Este contenido puede tener acceso restringido. Si tenés dificultades, contactá a Alice Araújo.');
+    'Este contenido puede tener acceso restringido.',
+    'Este contenido puede tener acceso restringido.');
   document.querySelectorAll('.filter-pill[data-value="all"] span').forEach(el=>el.textContent=isPT?'Todos':'Todos');
   document.querySelectorAll('.filter-pill[data-value="tracker"] span').forEach(el=>el.textContent='Brand Tracking');
   document.querySelectorAll('.filter-pill[data-value="nps"] span').forEach(el=>el.textContent=isPT?'NPS & Satisfação':'NPS & Satisfacción');
